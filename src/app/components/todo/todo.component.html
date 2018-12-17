@@ -1,1 +1,11 @@
-<div>Todo List App</div>
+<div class="content-container">
+  <h3>Add New Todo</h3>
+  <form (submit)="submitTodo()">
+    <input type="text" name="addTodo" id="addTodo" [(ngModel)]="addTodo" />
+    <input type="submit" />
+  </form>
+  <h3>Todo List App</h3>
+  <ul>
+    <li *ngFor="let todo of todoList">{{ todo }}<button>X</button></li>
+  </ul>
+</div>
