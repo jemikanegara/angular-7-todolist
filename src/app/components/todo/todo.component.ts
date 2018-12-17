@@ -14,7 +14,17 @@ export class TodoComponent implements OnInit {
   }
 
   submitTodo() {
-    this.todoList.unshift(this.addTodo);
+    this.todoList.push(this.addTodo);
+  }
+
+  deleteTodo(index) {
+    for (let i = 0; i < this.todoList.length; i++) {
+      if (i === index) {
+        if (confirm(`are you sure want to delete ${this.todoList[i]} `)) {
+          this.todoList.splice(i, 1);
+        }
+      }
+    }
   }
 
   ngOnInit() {}

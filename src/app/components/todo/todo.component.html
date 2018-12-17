@@ -6,6 +6,13 @@
   </form>
   <h3>Todo List App</h3>
   <ul>
-    <li *ngFor="let todo of todoList">{{ todo }}<button>X</button></li>
+    <li *ngFor="let todo of todoList; let i = index">
+      <div class="flex-between">
+        {{ todo
+        }}<button class="delete-button" (click)="deleteTodo(i)">
+          <strong>X</strong>
+        </button>
+      </div>
+    </li>
   </ul>
 </div>
